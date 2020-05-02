@@ -1,0 +1,2 @@
+~~~<div id="brd1" class="jxgbox" style="width:250px;height:200px;"></div>
+<script>brd1=JXG.JSXGraph.initBoard("brd1",{"boundingbox":[-2,2,2,-1],"axis":false,"showcopyright":false,"shownavigation":false});a=brd1.create('slider', [[-1.0,1.5],[1.0,1.5],[0.0,1.5,3.0]], {});function foo(x){return ((val(a)*Math.pow(x,2))-1)};brd1.create('functiongraph', [function(t){return foo(t);}, -2, 2], {"dash":2});</script>~~~
