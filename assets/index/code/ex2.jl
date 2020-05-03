@@ -1,5 +1,5 @@
 # This file was generated, do not modify it. # hide
-b = board("brd2", xlim=[-1, 15], ylim=[-0.5, 2.5])
+b = board(xlim=[-1, 15], ylim=[-0.5, 2.5])
 @jsf f1(t) = t - sin(t)
 @jsf f2(t) = 1 - cos(t)
 s = slider("t", [[0,2.1],[6,2.1],[0,π,5π]])

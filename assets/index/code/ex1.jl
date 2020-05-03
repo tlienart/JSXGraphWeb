@@ -1,5 +1,5 @@
 # This file was generated, do not modify it. # hide
-b = board("brd1", xlim=[-2,2], ylim=[-1,2])
+b = board(xlim=[-2,2], ylim=[-1,2])
 b ++ slider("a", [[-1,1.5],[1,1.5],[0,1.5,3]])
 @jsf foo(x) = val(a)*x^2 - 1
 b ++ plot(foo, dash=2)
