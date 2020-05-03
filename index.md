@@ -18,7 +18,9 @@ julia> using JSXGraph
 ```julia:ex0
 #hideall
 using JSXGraph
+println("~~~<script>$(JSXGraph.PREAMBLE)</script>~~~")
 ```
+\textoutput{ex0}
 
 If you use `Juno`, board objects should appear in your plot pane.
 If you use a terminal, board objects should appear in an independent [Blink](https://github.com/JuliaGizmos/Blink.jl) window.
@@ -38,7 +40,7 @@ The **style** of the board can be set by specifying the `style` attribute, that 
 b = board("brd", xlim=[-2,2], ylim=[-2,2])
 b ++ point(0, 0, name="hello")
 b.style = "width:250px;height:200px;"
-print("""~~~$(JSXGraph.standalone(b))~~~""") # hide
+print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
 ```
 \textoutput{ex0b}
 @@
@@ -57,6 +59,9 @@ If an object uses a function and that the function hasn't been added to the boar
 @show foo(3)
 ```
 \show{exf1}
+
+Whatever is in the body of the function needs to be understandable by Javascript. Basic math functions can be used (`sin, math, cos, exp, ...`).
+You could extend this by also using [`math.js`](https://mathjs.org/docs/reference/functions.html).
 
 ### Controllers
 
@@ -91,7 +96,7 @@ where $a$ is given by the value of a slider.
 
 @@example
 ```julia:ex1
-b = board("brd1", xlim=[-2,2], ylim=[-1,2])
+b = board(xlim=[-2,2], ylim=[-1,2])
 b ++ slider("a", [[-1,1.5],[1,1.5],[0,1.5,3]])
 @jsf foo(x) = val(a)*x^2 - 1
 b ++ plot(foo, dash=2)
@@ -124,7 +129,7 @@ where `t` is controlled by a slider.
 
 @@example
 ```julia:ex2
-b = board("brd2", xlim=[-1, 15], ylim=[-0.5, 2.5])
+b = board(xlim=[-1, 15], ylim=[-0.5, 2.5])
 @jsf f1(t) = t - sin(t)
 @jsf f2(t) = 1 - cos(t)
 s = slider("t", [[0,2.1],[6,2.1],[0,π,5π]])
@@ -151,7 +156,7 @@ where $a, b, A$ and $B$ are controlled by sliders.
 
 @@example
 ```julia:ex3
-b = board("brd3", xlim=[-12, 12], ylim=[-10,10])
+b = board(xlim=[-12, 12], ylim=[-10,10])
 b ++ (
     slider("a", [[-11,7],[-5,7],[0,3,6]], name="a"),
     slider("b", [[-11,5],[-5,5],[0,2,6]], name="b"),
@@ -173,11 +178,10 @@ print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
 
 @@example
 ```julia:dp1
-b = board("dp1", xlim=[0, 1], ylim=[0, 1])
+b = board(xlim=[0, 1], ylim=[0, 1])
 x = rand(10)
 y = rand(10)
 b ++ plot(x, y)
-s = str(b, preamble=false)
 b.style = "width:250px;height:200px;" # hide
 print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
 ```
@@ -188,10 +192,11 @@ print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
 
 @@example
 ```julia:dp2
-b = board("dp2", xlim=[0, 1], ylim=[0, 1])
+b = board(xlim=[0, 1], ylim=[0, 1])
 x = range(0, 1, length=100)
 y = @. 0.1 * exp(3x) / (3x+0.1)
-b ++ plot(x, y, strokecolor=:cornflowerblue, strokewidth=3)
+b ++ plot(x, y, strokecolor=:cornflowerblue,
+          strokewidth=3)
 b.style = "width:250px;height:200px;" # hide
 print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
 ```
