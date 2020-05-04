@@ -1,5 +1,5 @@
 # This file was generated, do not modify it. # hide
-b = board(xlim=[0, 1], ylim=[0, 1])
+b = board("dp1", xlim=[0, 1], ylim=[0, 1])
 x = rand(10)
 y = rand(10)
 b ++ plot(x, y)

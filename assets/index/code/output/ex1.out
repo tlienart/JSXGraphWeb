@@ -1,2 +1,2 @@
-~~~<div id="brd_fZI" class="jxgbox" style="width:250px;height:200px;"></div>
-<script>(function(divID){brd_fZI=JXG.JSXGraph.initBoard(divID,{"boundingbox":[-2,2,2,-1],"axis":false,"showcopyright":false,"shownavigation":false});aa=brd_fZI.create('slider', [[-1.0,1.5],[1.0,1.5],[0.0,1.5,3.0]], {});function foo(x){return ((val(aa)*Math.pow(x,2))-1)};brd_fZI.create('functiongraph', [function(t){return foo(t);}, -2, 2], {"dash":2});})('brd_fZI');</script>~~~
+~~~<div id="b1" class="jxgbox" style="width:250px;height:200px;"></div>
+<script>(function(){var b1=JXG.JSXGraph.initBoard("b1",{"boundingbox":[-2,2,2,-1],"axis":false,"showcopyright":false,"shownavigation":false});var a=b1.create('slider', [[-1.0,1.5],[1.0,1.5],[0.0,1.5,3.0]], {});function foo(x){return ((val(a)*Math.pow(x,2))-1)};b1.create('functiongraph', [function(t){return foo(t);}, -2, 2], {"dash":2});})();</script>~~~

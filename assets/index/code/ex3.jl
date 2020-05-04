@@ -1,5 +1,5 @@
 # This file was generated, do not modify it. # hide
-b = board(xlim=[-12, 12], ylim=[-10,10])
+b = board("b3", xlim=[-12, 12], ylim=[-10,10])
 b ++ (
     slider("a", [[-11,7],[-5,7],[0,3,6]], name="a"),
     slider("b", [[-11,5],[-5,5],[0,2,6]], name="b"),
