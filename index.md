@@ -96,9 +96,9 @@ where $a$ is given by the value of a slider.
 
 @@example
 ```julia:ex1
-b = board(xlim=[-2,2], ylim=[-1,2])
-b ++ slider("aa", [[-1,1.5],[1,1.5],[0,1.5,3]])
-@jsf foo(x) = val(aa)*x^2 - 1
+b = board("b1", xlim=[-2,2], ylim=[-1,2])
+b ++ slider("a", [[-1,1.5],[1,1.5],[0,1.5,3]])
+@jsf foo(x) = val(a)*x^2 - 1
 b ++ plot(foo, dash=2)
 b.style = "width:250px;height:200px;" # hide
 print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
@@ -129,7 +129,7 @@ where `t` is controlled by a slider.
 
 @@example
 ```julia:ex2
-b = board(xlim=[-1, 15], ylim=[-0.5, 2.5])
+b = board("b2", xlim=[-1, 15], ylim=[-0.5, 2.5])
 @jsf f1(t) = t - sin(t)
 @jsf f2(t) = 1 - cos(t)
 s = slider("t", [[0,2.1],[6,2.1],[0,π,5π]])
@@ -156,7 +156,7 @@ where $a, b, A$ and $B$ are controlled by sliders.
 
 @@example
 ```julia:ex3
-b = board(xlim=[-12, 12], ylim=[-10,10])
+b = board("b3", xlim=[-12, 12], ylim=[-10,10])
 b ++ (
     slider("a", [[-11,7],[-5,7],[0,3,6]], name="a"),
     slider("b", [[-11,5],[-5,5],[0,2,6]], name="b"),
@@ -178,7 +178,7 @@ print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
 
 @@example
 ```julia:dp1
-b = board(xlim=[0, 1], ylim=[0, 1])
+b = board("dp1", xlim=[0, 1], ylim=[0, 1])
 x = rand(10)
 y = rand(10)
 b ++ plot(x, y)
@@ -192,7 +192,7 @@ print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
 
 @@example
 ```julia:dp2
-b = board(xlim=[0, 1], ylim=[0, 1])
+b = board("dp2", xlim=[0, 1], ylim=[0, 1])
 x = range(0, 1, length=100)
 y = @. 0.1 * exp(3x) / (3x+0.1)
 b ++ plot(x, y, strokecolor=:cornflowerblue,
