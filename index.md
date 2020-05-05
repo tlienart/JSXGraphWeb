@@ -86,6 +86,8 @@ The original library's documentation [jsxgraph.js](https://jsxgraph.org/docs/ind
 
 ## Simple curves
 
+(More examples on [page 2](/page2/))
+
 ### Basic curve
 
 A parabola that depends on a slider:
@@ -202,3 +204,5 @@ print("""~~~$(JSXGraph.standalone(b, preamble=false))~~~""") # hide
 ```
 \textoutput{dp2}
 @@
+
+More examples on [Page 2](/page2/).
