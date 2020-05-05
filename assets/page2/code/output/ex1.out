@@ -1,2 +1,2 @@
-~~~<div id="brd_IeV" class="jxgbox" style="width:250px;height:200px;"></div>
-<script>(function(){var brd_IeV=JXG.JSXGraph.initBoard("brd_IeV",{"boundingbox":[-5,20,5,-2],"axis":true,"showcopyright":false,"shownavigation":false});var α =brd_IeV.create('point', [1, ℯ], {"name":"α","label":{fontsize:20}});function f(x){return exp(((x*log(valy(α)))/valx(α)))};brd_IeV.create('functiongraph', [function(t){return f(t);}, -5, 5], {});})();</script>~~~
+~~~<div id="brd_6M7" class="jxgbox" style="width:250px;height:200px;"></div>
+<script>(function(){var brd_6M7=JXG.JSXGraph.initBoard("brd_6M7",{"boundingbox":[-5,20,5,-2],"axis":true,"showcopyright":false,"shownavigation":false});var α =brd_6M7.create('point', [1, ℯ], {"name":"α","label":{fontsize:20}});function f(x){return exp(((x*log(valy(α)))/valx(α)))};brd_6M7.create('functiongraph', [function(t){return f(t);}, -5, 5], {});})();</script>~~~
